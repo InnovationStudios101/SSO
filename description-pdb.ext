@@ -1,0 +1,35 @@
+#include <core\modules\modules.hpp>
+
+
+//http://community.bistudio.com/wiki/Arma_2:_Patch_v1.03.58899_Beta#How_to_add_multiple_parameters_to_your_MP_mission
+class Params {
+#ifdef defaultparams
+	#include <params.hpp>
+#endif
+#ifdef persistentDB
+	#include <core\modules\persistentDB\params.hpp>
+#endif
+}; 
+
+#ifdef persistentDB
+	#include <core\modules\persistentDB\dialog.hpp>
+#endif
+
+// Extended Event Handlers
+#ifdef persistentDB
+	class Extended_PreInit_Eventhandlers
+	{
+		unit_killed_preinit = "persistent_fnc_unitKilled = compile preprocessFile 'core\modules\persistentDB\unitKilled.sqf'" ;
+	};
+	class Extended_Killed_Eventhandlers
+	{
+		class MAN
+		{
+			man_killed = "_this call persistent_fnc_unitKilled";
+		};
+	};
+#endif
+
+
+
+

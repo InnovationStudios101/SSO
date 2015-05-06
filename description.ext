@@ -1,0 +1,40 @@
+#include <description-PDB.ext>
+
+// ====================================================================================
+class Header
+{
+  	gameType = Coop;
+  	minPlayers = 1;
+  	maxPlayers = 16;
+};
+
+author = "JSF 82nd Reaper";
+onLoadName = "Small Scale Operations";
+onLoadMission = "A group of NATO soldiers is tasked with multiple objectives to complete.";
+onLoadMissionTime = 1;
+onLoadIntro = "A JSFC Development";
+onLoadIntroTime = 1;
+
+loadScreen = "";
+disableChannels[] = {0, 1, 2, 3, 4, 5, 6};
+
+respawn = "BASE";
+respawnDelay = 10;
+respawnDialog = 0;
+
+disabledAi = 1;
+AiKills = 1;
+
+class CfgMusic
+{
+	tracks[]={jsf_track01};
+
+	class jsf_track01
+	{
+		name = "jsf_track01";
+		sound[] = {};
+	};
+};
+
+
+
