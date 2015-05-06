@@ -8,7 +8,7 @@ reserved_uids = ["12345676", "12355123", "12313456"];
 _uid = getPlayerUId player;
 
 if ((player in reserved_units) && !(_uid in reserved_uids)) then {
-	player groupChat "You are in a reserved slot, kicking to lobby in 5 seconds";
+	player groupChat "You are in a reserved slot, you'll be kicked to lobby in 5 seconds";
 	sleep 5;
 	failMission "end1";
 };

@@ -1,1 +1,1 @@
-if (isClass(configFile >> "CfgPatches" >> "acre_main")) then { hint "ACRE is available"} else {hint "Hey Jackwagon, you don't have ACRE"};
+if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then { hint "TFAR is available"} else {hint "Hey Jackwagon, you don't have TFAR"};

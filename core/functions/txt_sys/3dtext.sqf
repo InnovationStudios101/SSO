@@ -1,5 +1,5 @@
 /*
-Author: Karel Moricky 
+Author: Karel Moricky
 
 Description:
 3D credits.
@@ -20,18 +20,18 @@ _text = _this select 0;
 _pos = _this select 1;
 _minDis = if (count _this > 2) then {_this select 2} else {20};
 _fadeDis = if (count _this > 3) then {_this select 3} else {1.5};
-if (isnil "BIS_fnc_3dCredits_n") then {BIS_fnc_3dCredits_n = 2733;};
+if (isnil "BIS_fnc_3dCredits") then {BIS_fnc_3dCredits_n = 2733;};
 
 if (typename _pos == typename objnull) then {_pos = position _pos};
 if (typename _pos == typename "") then {_pos = markerpos _pos};
 
-BIS_fnc_3dCredits_n cutrsc ["rscDynamicText","plain"];
-BIS_fnc_3dCredits_n = BIS_fnc_3dCredits_n + 1;
+BIS_fnc_3dCredits cutrsc ["rscDynamicText","plain"];
+BIS_fnc_3dCredits = BIS_fnc_3dCredits + 1;
 
 //#define DISPLAY (uinamespace getvariable "BIS_dynamicText")
 //#define CONTROL (DISPLAY displayctrl 9999)
 
-_display = uinamespace getvariable "BIS_dynamicText";
+_display = uinamespace getvariable "BIS_fnc_dynamicText";
 _control = _display displayctrl 9999;
 
 #define DISPLAY	_display
@@ -45,7 +45,7 @@ CONTROL ctrlcommit 0;
 _w = safezoneW;//0.5;
 _h = 1;//0.3;
 
-while {true} do 
+while {true} do
 {
 	_dis = player distance _pos;
 	_alpha = abs ((_dis / _minDis) - _fadeDis);
@@ -54,7 +54,7 @@ while {true} do
 		_pos2D = worldtoscreen _pos;
 
 		if (count _pos2D > 0) then {
-			CONTROL ctrlsetposition 
+			CONTROL ctrlsetposition
 			[
 				(_pos2D select 0) - _w/2,
 				(_pos2D select 1) - _h/2,
