@@ -1,15 +1,15 @@
-﻿/*  
+﻿/*
 =========================================================
 Based on Simple Vehicle Respawn Script v1.6
 by Tophe of �stg�ta Ops [OOPS]
 
 Put this in the vehicles init line:
-veh = [this, Delay] execVM "core\veh_sys\respawn.sqf"
+veh = [this, Delay] execVM "core\functions\veh_sys\respawn.sqf"
 
 Default respawn delay is 30 seconds, to set a custom
-respawn delay time, put that in the init as well. 
+respawn delay time, put that in the init as well.
 Like this:
-veh = [this, 15] execVM "core\veh_sys\respawn.sqf"
+veh = [this, 15] execVM "core\functions\veh_sys\respawn.sqf"
 
 =========================================================
 */
@@ -35,8 +35,8 @@ _weapons = getWeaponCargo _unit;
 _mags = getMagazineCargo _unit;
 
 // Start monitoring the vehicle
-while {_run} do {	
-		sleep _delay;		
+while {_run} do {
+		sleep _delay;
 		if(getPosASL _unit distance _position > 10) then {
 			_unit = _type createVehicle _position;
 			_unit setPosASL _position;
@@ -47,14 +47,14 @@ while {_run} do {
 		};
         clearWeaponCargo _unit;
         clearMagazineCargo _unit;
-        
+
         _max = count(_weapons select 0);
         for "_i" from 0 to _max do {
                 _unit addWeaponCargo [(_weapons select 0) select _i, (_weapons select 1) select _i];
         };
-        
+
         _max = count(_mags select 0);
         for "_i" from 0 to _max do {
                 _unit addMagazineCargo [(_mags select 0) select _i, (_mags select 1) select _i];
-        };        
+        };
 };

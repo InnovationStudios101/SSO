@@ -1,23 +1,23 @@
 private ["_refreshTime"];
-_refreshTime = 600; // refill every 10 minutes 
-_this allowDamage true; 
+_refreshTime = 600; // refill every 10 minutes
+_this allowDamage true;
 
-// Loop forever 
-while {true} do 
-{ 
+// Loop forever
+while {true} do
+{
 
-    // Clear Crate 
-    clearWeaponCargo _this; 
-    clearMagazineCargo _this; 
+    // Clear Crate
+    clearWeaponCargo _this;
+    clearMagazineCargo _this;
 
-// Fill Crate 
+// Fill Crate
 // Equipment
-    	// Weapons 
-        	_this addWeaponCargo ["Binocular", 30]; 
-        	_this addWeaponCargo ["NVGoggles", 30]; 
-        	_this addWeaponCargo ["Laserdesignator", 30]; 
-        	_this addWeaponCargo ["ACE_Rangefinder_OD", 30];
-	
+	// Weapons
+    	_this addWeaponCargo ["Binocular", 30];
+    	_this addWeaponCargo ["NVGoggles", 30];
+    	_this addWeaponCargo ["Laserdesignator", 30];
+    	_this addWeaponCargo ["ACE_Rangefinder_OD", 30];
+
 	// Magazines
 		_this addMagazineCargo ["SmokeShell", 30];
 		_this addMagazineCargo ["SmokeShellBlue", 30];
@@ -43,28 +43,28 @@ while {true} do
 
 		_this addMagazineCargo ["ACE_Battery_Rangefinder", 270];
 		_this addMagazineCargo ["Laserbatteries", 270];
-// Pistol 
-    	// Weapons 
-        	_this addWeaponCargo ["M9", 30]; 
-     
-    	// Magazines 
-        	_this addMagazineCargo ["15Rnd_9x19_M9", 100];
+// Pistol
+	// Weapons
+    	_this addWeaponCargo ["M9", 30];
+
+	// Magazines
+    	_this addMagazineCargo ["15Rnd_9x19_M9", 100];
 // Item
-    	// Weapons 
-        	_this addWeaponCargo ["ACE_DAGR", 30]; 
-        	_this addWeaponCargo ["ACE_Earplugs", 30]; 
-        	_this addWeaponCargo ["ACE_GlassesGasMask_US", 30]; 
-        	_this addWeaponCargo ["ACE_GlassesLHD_glasses", 30]; 
-        	_this addWeaponCargo ["ACE_KeyCuffs", 30]; 
-        	_this addWeaponCargo ["ACE_Map", 30]; 
-        	_this addWeaponCargo ["ACE_Map_Tools", 30]; 
-        	_this addWeaponCargo ["ACE_SpottingScope", 30]; 
-        	_this addWeaponCargo ["ItemCompass", 30]; 
-        	_this addWeaponCargo ["ItemWatch", 30]; 
-        	_this addWeaponCargo ["ACE_MineMarkers", 30]; 
-        	_this addWeaponCargo ["ACE_GlassesBalaklava", 30]; 
-        	_this addWeaponCargo ["ACE_Kestrel4500", 30]; 
-        	_this addWeaponCargo ["ACE_SpareBarrel", 30]; 
+	// Weapons
+    	_this addWeaponCargo ["ACE_DAGR", 30];
+    	_this addWeaponCargo ["ACE_Earplugs", 30];
+    	_this addWeaponCargo ["ACE_GlassesGasMask_US", 30];
+    	_this addWeaponCargo ["ACE_GlassesLHD_glasses", 30];
+    	_this addWeaponCargo ["ACE_KeyCuffs", 30];
+    	_this addWeaponCargo ["ACE_Map", 30];
+    	_this addWeaponCargo ["ACE_Map_Tools", 30];
+    	_this addWeaponCargo ["ACE_SpottingScope", 30];
+    	_this addWeaponCargo ["ItemCompass", 30];
+    	_this addWeaponCargo ["ItemWatch", 30];
+    	_this addWeaponCargo ["ACE_MineMarkers", 30];
+    	_this addWeaponCargo ["ACE_GlassesBalaklava", 30];
+    	_this addWeaponCargo ["ACE_Kestrel4500", 30];
+    	_this addWeaponCargo ["ACE_SpareBarrel", 30];
 
 // Medical Equipment
 	// Magazines

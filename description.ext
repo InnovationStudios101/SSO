@@ -1,40 +1,116 @@
-#include <description-PDB.ext>
-
-// ====================================================================================
-class Header
-{
-  	gameType = Coop;
-  	minPlayers = 1;
-  	maxPlayers = 16;
+class Header {
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 32;
 };
 
-author = "JSF 82nd Reaper";
-onLoadName = "Small Scale Operations";
-onLoadMission = "A group of NATO soldiers is tasked with multiple objectives to complete.";
-onLoadMissionTime = 1;
-onLoadIntro = "A JSFC Development";
-onLoadIntroTime = 1;
-
-loadScreen = "";
-disableChannels[] = {0, 1, 2, 3, 4, 5, 6};
-
-respawn = "BASE";
-respawnDelay = 10;
-respawnDialog = 0;
-
-disabledAi = 1;
-AiKills = 1;
-
-class CfgMusic
-{
-	tracks[]={jsf_track01};
-
-	class jsf_track01
-	{
-		name = "jsf_track01";
-		sound[] = {};
+class CfgSounds {
+	sounds[] = {};
+	class SoundTrack01 {
+		name = "";
+		sound[] = {"", 1, 1};
+		titles[] = {1, ""};
 	};
 };
 
+class CfgRadio {
+	sounds[] = {};
+	class RadioMsg01 {
+		name = "";
+		sound[] = {"", db-100, 1.0};
+		title = "";
+	};
+};
 
+class CfgMusic {
+	tracks[]={};
 
+	class MusicTrack01 {
+		name = "";
+		sound[] = {"", db+0, 1.0};
+	};
+};
+
+class CfgUnitInsignia {
+	class 111thID {
+		displayName = "111th Infantry Division";
+		author = "Bohemia Interactive";
+		texture = "\a3\UI_F_Bootcamp\Data\CfgUnitInsignia\B_111thID_texture_ca.paa";
+		textureVehicle = "";
+	};
+};
+
+class CfgDebriefing {
+	class endDeath {
+		title = "All Players have died.";
+		description = "Everyone was killed.";
+		picture = "KIA";
+	};
+};
+
+class CfgSettings {
+	class CBA {
+		class Caching {
+			compile = 0;
+			xeh = 0;
+			functions = 0;
+		};
+	};
+};
+
+dev = "J. Schmidt";
+author = "J. Schmidt";
+onLoadName = "Large Scale Operations";
+briefingName = "";
+onLoadMission = "A group of NATO soldiers are tasked with multiple objectives to complete.";
+overviewText = "";
+overviewPicture = "";
+
+respawn = 2;
+respawnDelay = 10;
+respawnVehicleDelay = 15;
+respawnTemplates[] = {"Revive"};
+respawnOnStart = 0;
+respawnDialog = 0;
+
+reviveDelay = 10;
+reviveForceRespawnDelay = 30;
+reviveBleedOutDelay = 120;
+
+disabledAI = 1;
+aiKills = 0;
+
+briefing = 0;
+debriefing = 0;
+
+ShowGPS = 0;
+showCompass = 1;
+showMap = 0;
+showNotePad = 0;
+showPad = 0;
+showWatch = 1;
+showUAVFeed = 1;
+
+scriptedPlayer = 1;
+
+disableChannels[]={0,1,2,3,4,5,6};
+enableItemsDropping = 1;
+
+enableDebugConsole = 1;
+
+corpseManagerMode = 0;
+corpseLimit = 1;
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 1200;
+
+wreckManagerMode = 0;
+wreckLimit = 1;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 1200;
+
+forceRotorLibSimulation = 1;
+
+taskManagement_markers2D = 0;
+taskManagement_markers3D = 1;
+taskManagement_propagate = 1;
+taskManagement_drawDist = 2500;

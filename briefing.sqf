@@ -1,21 +1,48 @@
-player createDiaryRecord ["Diary", ["Briefing", ""]];
-player createDiaryRecord ["Diary", ["Intel", ""]];
-player createDiaryRecord ["Diary", ["ROE", ""]];
+_cre = player createDiaryRecord ["diary", ["Credits","
+<br/>
+	*** Insert mission credits here. ***
+<br/><br/>
+	Developed by J. Schmidt (http://71.87.55.196/)
+"]];
 
-//Objective 3
+_adm = player createDiaryRecord ["diary", ["Administration","
+<br/>
+	*** Insert information on administration and logistics here. ***
+"]];
 
-tskobj_3 = player createSimpleTask["NAME OF TASK"];
-tskobj_3 setSimpleTaskDescription ["Put your Description of the task/objective here to let others know what they are supposed to do.", "NAME OF TASK", "TASK HUD TITLE"];
-tskobj_3 setSimpleTaskDestination (getMarkerPos "NAME OF MARKER");
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+	<font size='18'>COMMANDER'S INTENT</font>
+<br/>
+	*** Insert very short summary of plan here. ***
+<br/><br/>
+	<font size='18'>MOVEMENT PLAN</font>
+<br/>
+	*** Insert movement instructions here. ***
+<br/><br/>
+	<font size='18'>FIRE SUPPORT PLAN</font>
+<br/>
+	*** Insert fire support instructions here. ***
+<br/><br/>
+	<font size='18'>SPECIAL TASKS</font>
+<br/>
+	*** Insert instructions for specific units here. ***
+"]];
 
-//Objective 2
+_mis = player createDiaryRecord ["diary", ["Mission","
+<br/>
+	*** Insert the mission here. ***
+"]];
 
-tskobj_2 = player createSimpleTask["NAME OF TASK"];
-tskobj_2 setSimpleTaskDescription ["Put your Description of the task/objective here to let others know what they are supposed to do.", "NAME OF TASK", "TASK HUD TITLE"];
-tskobj_2 setSimpleTaskDestination (getMarkerPos "NAME OF MARKER");
-
-//Objective 1
-
-tskobj_1 = player createSimpleTask["NAME OF TASK"];
-tskobj_1 setSimpleTaskDescription ["Put your Description of the task/objective here to let others know what they are supposed to do.", "NAME OF TASK", "TASK HUD TITLE"];
-tskobj_1 setSimpleTaskDestination (getMarkerPos "NAME OF MARKER");
+_sit = player createDiaryRecord ["diary", ["Situation","
+<br/>
+	*** Insert general information about the situation here.***
+<br/><br/>
+	<font size='18'>ENEMY FORCES</font>
+<br/>
+	*** Insert information about enemy forces here.***
+<br/><br/>
+	<font size='18'>FRIENDLY FORCES</font>
+<br/>
+	*** Insert information about friendly forces here.***
+"]];

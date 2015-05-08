@@ -1,2 +1,0 @@
-#define defaultparams
-#define persistentDB
