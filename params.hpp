@@ -32,7 +32,7 @@ class Params {
 		values[] = {500,1000,2000,5000};
 		// When 'texts' are missing, values will be displayed directly instead
 		default = 1000;
-		file = "core\scripts\setViewDistance.sqf"; // (Optional) Script called when player joins, selected value is passed as an argument
+		file = "core\core\scripts\setViewDistance.sqf"; // (Optional) Script called when player joins, selected value is passed as an argument
 	};
 	class Weather {
 		title = "Weather:";

@@ -1,5 +1,5 @@
 // Add Mission Scripts
-	[]execVM "core\functions\functions\rank_sys.sqf";
+	[]execVM "core\functions\rnk_sys\rank_sys.sqf";
 	[]execVM "core\functions\lck_sys\checkslot.sqf";
 	[]execVM "core\functions\lck_sys\mod_check.sqf";
 	[]execVM "core\functions\txt_sys\3dtext.sqf";

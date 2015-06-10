@@ -18,8 +18,8 @@ Returns:
 Boolean - success flag
 
 Example(s):
-null = [group this,(getPos this),250] execVM "scripts\BIN_taskPatrol.sqf"
-null = [group this,(getPos this),250,1] execVM "scripts\BIN_taskPatrol.sqf" // Same with debug markers
+null = [group this,(getPos this),250] execVM "core\scripts\BIN_taskPatrol.sqf"
+null = [group this,(getPos this),250,1] execVM "core\scripts\BIN_taskPatrol.sqf" // Same with debug markers
 
 -----------------------------------------------------------------------------------------------------------------------
 Notes:
@@ -56,7 +56,7 @@ _slack = _max_dist / 5.5;
 if ( _slack < 20 ) then { _slack = 20 };
 
 _angle_offset = random 360;
-while {count _wp_array < _wp_count} do 
+while {count _wp_array < _wp_count} do
 {
     private ["_x1","_y1","_wp_pos", "_prepos","_bldgpos","_bldgs"];
 
@@ -110,7 +110,7 @@ for "_i" from 1 to (_wp_count - 1) do
     [_grp,_i] setWaypointTimeout [0, 2, 16];
     // When completing waypoint have 33% chance to choose a random next wp
     [_grp,_i] setWaypointStatements ["true", "if ((random 3) > 2) then { group this setCurrentWaypoint [(group this), (floor (random (count (waypoints (group this)))))];};"];
-    
+
     if (_debug > 0) then {
         _marker_name = str(_wp_array select _i);
         _marker = createMarker[_marker_name,[_cur_pos select 0,_cur_pos select 1]];

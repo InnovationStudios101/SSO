@@ -11,12 +11,12 @@ Parameter(s):
 _this select 0: group (Group)
 _this select 1: defense position (Array)
 _this select 2: radius (Number)
-    
+
 Returns:
 Boolean - success flag
 
 Example(s):
-null = [group this,(getPos this)] execVM "scripts\BIN_taskDefend.sqf"
+null = [group this,(getPos this)] execVM "core\scripts\BIN_taskDefend.sqf"
 
 ------------------------------------------------------------------------------------------------------------
 Notes:
@@ -39,26 +39,26 @@ _static_weapons = [];
 
 // Find all nearby static defenses or vehicles without a gunner
 {
-    if ((_x emptyPositions "gunner") > 0) then 
+    if ((_x emptyPositions "gunner") > 0) then
     {
-        _static_weapons = _static_weapons + [_x];    
+        _static_weapons = _static_weapons + [_x];
     };
 } forEach _list;
 
 // Have the group man empty static defenses and vehicle turrets
 {
     // Are there still units available?
-    if ((count _units) > 0) then 
+    if ((count _units) > 0) then
     {
         private ["_unit"];
         _unit = (_units select ((count _units) - 1));
-    
+
         _unit assignAsGunner _x;
         [_unit] orderGetIn true;
         // Give gunner time to get in, otherwise force.
-        _unit spawn { 
+        _unit spawn {
             private ["_x"];
-            sleep 16; _this moveInGunner _x; };        
+            sleep 16; _this moveInGunner _x; };
         _units resize ((count _units) - 1);
     };
 } forEach _static_weapons;
@@ -95,19 +95,19 @@ _wp2 setWaypointType "SAD";
     _list = position (_this select 0) nearObjects ['LandVehicle', 120];
     _static_weapons = [];
     {
-        if ((_x emptyPositions 'gunner') > 0) then 
+        if ((_x emptyPositions 'gunner') > 0) then
         {
-            _static_weapons = _static_weapons + [_x];    
+            _static_weapons = _static_weapons + [_x];
         };
     } forEach _list;
     {
         _units = units _grp;
-        if ((count _units) > 0) then 
+        if ((count _units) > 0) then
         {
             _unit = (_units select ((count _units) - 1));
             _unit assignAsGunner _x;
             [_unit] orderGetIn true;
-            _unit spawn { sleep 16; _this moveInGunner _x; };        
+            _unit spawn { sleep 16; _this moveInGunner _x; };
             _units resize ((count _units) - 1);
         };
     } forEach _static_weapons;
